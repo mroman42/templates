@@ -1,0 +1,4 @@
+main.tex
+*.bbl
+_minted*
+ltximg*
