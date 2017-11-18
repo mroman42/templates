@@ -1,0 +1,5 @@
+*.log
+*.pyg
+*.out
+*.aux
+*.toc
