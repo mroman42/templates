@@ -1,0 +1,38 @@
+%!TEX program = xelatex
+% Importar configuración
+\input{_preamble.tex}
+
+\title{Una presentación de ejemplo}
+\date{\today}
+\author{Autoría}
+\institute{Para LibreIM}
+
+\begin{document}
+\maketitle
+\begin{frame}{\contentsname}
+  \tableofcontents
+\end{frame}
+
+\section{Una sección}
+\subsection{Una subsección}
+\begin{frame}{Introducción}
+  Configura esta \alert{presentación} mediante el archivo \texttt{\_preamble.tex}.
+  
+  \begin{theorem}
+    No hay números naturales mayores de 7.
+  \end{theorem}
+\end{frame}
+
+\begin{frame}[fragile]{Otra diapositiva}
+\begin{verbatim}
+$ git clone git@github.com:libreim/templates
+$ cd templates
+\end{verbatim}
+\end{frame}
+
+\section{Conclusiones}
+\subsection{Conclusiones}
+\begin{frame}[standout]
+  ¡Muchas gracias!
+\end{frame}
+\end{document}
