@@ -3,7 +3,7 @@
 % La plantilla original se licencia en GNU GPLv2.
 
 \documentclass[oneside,openright,titlepage,numbers=noenddot,openany,headinclude,footinclude=true,
-cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,ngerman,spanish,american]{scrreprt}
+cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,ngerman,american,spanish]{scrreprt}
 
 % Paquetes de latex que se cargan al inicio. Cubren la entrada de
 % texto, gráficos y símbolos.
@@ -24,7 +24,9 @@ cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,ngerman,spanis
 \usepackage{tikz}
 \usepackage{minted}
 \usepackage[T1]{fontenc}
-\usepackage[beramono,eulerchapternumbers,linedheaders,parts,a5paper,dottedtoc,manychapters,pdfspacing]{classicthesis}
+\usepackage{natbib}
+\usepackage[beramono,eulerchapternumbers,linedheaders,parts,a5paper,dottedtoc,
+manychapters,pdfspacing]{classicthesis}
 
 % Geometría y espaciado de párrafos.
 \setcounter{secnumdepth}{0}
@@ -66,7 +68,10 @@ cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,ngerman,spanis
 \tableofcontents
 
 
-\chapter*{Abstract}
+\chapter*{Resumen}
+
+Nos basamos en el trabajo desarrollado en \cite{turing1936a}.
+
 Occaecati expedita cumque est. Aut odit vel nobis praesentium dolorem
 sed eligendi. Inventore molestiae delectus voluptatibus
 consequatur. Et cumque quia recusandae fugiat earum repellat
@@ -213,5 +218,12 @@ in fermentum nibh euismod quis. Vivamus suscipit arcu sed quam dictum
 suscipit. Maecenas pulvinar massa pulvinar fermentum
 pellentesque. Morbi eleifend nec velit ut suscipit. Nam vitae
 vestibulum dui, vel mollis dolor. Integer quis nibh sapien.
+
+
+
+% Añade sección de referencias al final del documento.
+% En research.bib están las entradas de los artículos que citamos
+\bibliographystyle{alpha} % Selecciona un estilo de cita.
+\bibliography{research}
 
 \end{document}
