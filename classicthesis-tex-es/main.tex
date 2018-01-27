@@ -1,19 +1,37 @@
-% Adaptación de la plantilla classicthesis de André Miede.
-%   https://ctan.org/tex-archive/macros/latex/contrib/classicthesis?lang=en
+% Plantilla para un Trabajo Fin de Grado de la Universidad de Granada,
+% adaptada para el Doble Grado en Ingeniería Informática y Matemáticas.
+%
+%  Autor: Mario Román.
+%  Licencia: GNU GPLv2.
+%
+% Esta plantilla es una adaptación al castellano de la plantilla
+% classicthesis de André Miede, que puede obtenerse en:
+%  https://ctan.org/tex-archive/macros/latex/contrib/classicthesis?lang=en
 % La plantilla original se licencia en GNU GPLv2.
+%
+% Esta plantilla usa símbolos de la Universidad de Granada sujetos a la normativa
+% de identidad visual corporativa, que puede encontrarse en:
+% http://secretariageneral.ugr.es/pages/ivc/normativa
+%
+% La compilación se realiza con las siguientes instrucciones:
+%   pdflatex --shell-escape main.tex
+%   bibtex main
+%   pdflatex --shell-escape main.tex
+%   pdflatex --shell-escape main.tex
 
+% Opciones del tipo de documento
 \documentclass[oneside,openright,titlepage,numbers=noenddot,openany,headinclude,footinclude=true,
-cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,ngerman,spanish]{scrreprt}
+cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,main=spanish]{scrreprt}
 
 % Paquetes de latex que se cargan al inicio. Cubren la entrada de
-% texto, gráficos y símbolos.
+% texto, gráficos, código fuente y símbolos.
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{fixltx2e}
-\usepackage{graphicx}
-\usepackage{grffile}
-\usepackage{longtable}
-\usepackage{wrapfig}
+\usepackage{graphicx} % Inclusión de imágenes.
+\usepackage{grffile}  % Distintos formatos para imágenes.
+\usepackage{longtable} % Tablas multipágina.
+\usepackage{wrapfig} % Coloca texto alrededor de una figura.
 \usepackage{rotating}
 \usepackage[normalem]{ulem}
 \usepackage{amsmath}
@@ -21,10 +39,12 @@ cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,ngerman,spanis
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage[colorlinks=true]{hyperref}
-\usepackage{tikz}
-\usepackage{minted}
+\usepackage{tikz} % Diagramas conmutativos.
+\usepackage{minted} % Código fuente.
 \usepackage[T1]{fontenc}
 \usepackage{natbib}
+
+% Plantilla classicthesis
 \usepackage[beramono,eulerchapternumbers,linedheaders,parts,a5paper,dottedtoc,
 manychapters,pdfspacing]{classicthesis}
 
@@ -54,29 +74,33 @@ manychapters,pdfspacing]{classicthesis}
 \input{classicthesis-config} % En classicthesis-config.tex se almacenan las opciones propias de la plantilla.
 
 % Color institucional UGR
-\definecolor{ugrColor}{HTML}{ed1c3e}
-\definecolor{ugrColor2}{HTML}{c6474b}
+% \definecolor{ugrColor}{HTML}{ed1c3e} % Versión clara.
+\definecolor{ugrColor}{HTML}{c6474b}  % Usado en el título.
+\definecolor{ugrColor2}{HTML}{c6474b} % Usado en las secciones.
 
 % Datos de portada
 \usepackage{titling} % Facilita los datos de la portada
-\author{Nicolas Bourbaki} %\let\Author\@author
-\date{\today} %\let\Date\@date
-\title{Elementos de matemática} %\let\Title\@title
+\author{Nicolas Bourbaki} 
+\date{\today}
+\title{Elementos de matemática}
 
 % Portada
 \include{titlepage}
 \usepackage{wallpaper}
-
+\usepackage[main=spanish]{babel}
 
 
 \begin{document}
 
-\ThisULCornerWallPaper{1}{pcmod4.pdf}
+\ThisULCornerWallPaper{1}{ugrA4.pdf}
 \maketitle
 \tableofcontents
 
 
 \chapter*{Resumen}
+
+% Los artículos y libros incluidos en el archivo research.bib pueden
+% citarse desde cualquier punto del texto usando ~\cite.
 
 Nos basamos en el trabajo desarrollado en~\cite{turing1936a}.
 
@@ -130,7 +154,6 @@ convallis, id malesuada metus facilisis.
 
 \begin{theorem}
 En las condiciones dadas anteriormente se tiene
-
 \[
 g(t) = \int^b_a K(t,s)f(s)\ \diff s.
 \]
@@ -162,7 +185,6 @@ volutpat placerat libero a, gravida interdum nisi.
 
 \begin{corollary}
 Se obtiene el siguiente resultado
-
 \[\begin{tikzcd}
 a\rar{f} \dar[swap]{g} & b \dar{h} \\
 c\rar{k} & d
@@ -175,8 +197,8 @@ Esta es una descripción de la parte de informática.
 
 \part{Parte de informática}
 \chapter{Sección tercera}
-El siguiente código es un ejemplo claro de lo que queremos
-ejemplificar.
+El siguiente código es un ejemplo de coloreado de sintaxis e inclusión
+directa de código fuente en el texto usando \texttt{minted}.
 
 \begin{minted}[frame=lines]{haskell}
 -- From the GHC.Base library.
@@ -230,8 +252,10 @@ vestibulum dui, vel mollis dolor. Integer quis nibh sapien.
 
 
 % Añade sección de referencias al final del documento.
-% En research.bib están las entradas de los artículos que citamos
-\bibliographystyle{alpha} % Selecciona un estilo de cita.
-\bibliography{research}
+% Selecciona un estilo de cita.
+\bibliographystyle{alpha}
+% En research.bib están las entradas de los artículos que citamos.
+% Podemos cambiar el nombre del archivo aquí.
+\bibliography{research}   
 
 \end{document}
