@@ -3,7 +3,7 @@
 % La plantilla original se licencia en GNU GPLv2.
 
 \documentclass[oneside,openright,titlepage,numbers=noenddot,openany,headinclude,footinclude=true,
-cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,ngerman,american,spanish]{scrreprt}
+cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,ngerman,spanish]{scrreprt}
 
 % Paquetes de latex que se cargan al inicio. Cubren la entrada de
 % texto, gráficos y símbolos.
@@ -38,7 +38,7 @@ manychapters,pdfspacing]{classicthesis}
 \setlength{\parindent}{0pt}
 \usepackage{parskip}
 
-% Profundidad de la tabla de contenidos
+% Profundidad de la tabla de contenidos.
 \setcounter{secnumdepth}{3}
 
 % Usa el paquete minted para mostrar trozos de código.
@@ -53,17 +53,25 @@ manychapters,pdfspacing]{classicthesis}
 \input{macros}  % En macros.tex se almacenan las opciones y comandos para escribir matemáticas.
 \input{classicthesis-config} % En classicthesis-config.tex se almacenan las opciones propias de la plantilla.
 
+% Color institucional UGR
+\definecolor{ugrColor}{HTML}{ed1c3e}
+\definecolor{ugrColor2}{HTML}{c6474b}
 
 % Datos de portada
-\author{Nicolas Bourbaki}
-\date{\today}
-\title{Lorem Ipsum en la filosofía matemática\\\medskip
-\large Un enfoque moderno}
+\usepackage{titling} % Facilita los datos de la portada
+\author{Nicolas Bourbaki} %\let\Author\@author
+\date{\today} %\let\Date\@date
+\title{Elementos de matemática} %\let\Title\@title
+
+% Portada
+\include{titlepage}
+\usepackage{wallpaper}
 
 
 
 \begin{document}
 
+\ThisULCornerWallPaper{1}{pcmod4.pdf}
 \maketitle
 \tableofcontents
 
